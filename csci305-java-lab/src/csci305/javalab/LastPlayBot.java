@@ -16,18 +16,20 @@ public class LastPlayBot extends Player{
     public LastPlayBot(String name) {
         super(name);
     }
-    
-    public void setLast(Element e){
-        this.last = e;
-    }
 
     @Override
     public Element play() {
         if(this.last == null){
-            this.last = Driver.players.get("RandomBot").play();
+            this.last = new RandomBot("RandomBot").play();
         }
-        System.out.println("LPB played: " + this.last.getName());
+        //System.out.println("LPB played: " + this.last.getName());
         return this.last;
     }
+    
+    @Override
+    public void setLast(Element e){
+        this.last = e;
+    }
+
     
 }

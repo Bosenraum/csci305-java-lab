@@ -67,11 +67,17 @@ public class Human extends Player{
     }
     
     private void printMenu(){
+        System.out.println();
         System.out.println("(1) : Rock");
         System.out.println("(2) : Paper");
         System.out.println("(3) : Scissors");
         System.out.println("(4) : Lizard");
         System.out.println("(5) : Spock");
+    }
+    
+    @Override
+    public void setLast(Element e) {
+        
     }
     
 }

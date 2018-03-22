@@ -20,6 +20,8 @@ public class Outcome {
     
     @Override
     public String toString(){
-        return this.out + " -- " + this.result;
+        //return this.out + " -- " + this.result;
+        System.out.println("  " + out);
+        return result;
     }
 }

@@ -41,4 +41,9 @@ public class RandomBot extends Player{
         return result;
     }
     
+    @Override
+    public void setLast(Element e) {
+        
+    }
+    
 }

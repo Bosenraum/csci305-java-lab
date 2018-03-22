@@ -45,9 +45,13 @@ public class IterativeBot extends Player{
         if(this.counter > 5){
             this.counter = 1;
         }
-        System.out.println("Iterative Bot played: " + result.getName());
         
         return result;
+    }
+    
+    @Override
+    public void setLast(Element e) {
+        
     }
     
 }

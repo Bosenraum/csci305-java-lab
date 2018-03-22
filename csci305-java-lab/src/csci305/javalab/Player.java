@@ -23,4 +23,6 @@ public abstract class Player {
     
     public abstract Element play();
     
+    public abstract void setLast(Element e);
+    
 }

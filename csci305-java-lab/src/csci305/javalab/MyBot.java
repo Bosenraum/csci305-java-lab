@@ -7,26 +7,22 @@ package csci305.javalab;
 
 /**
  *
- * @author austi_000
+ * @author Austin
  */
-public class StupidBot extends Player {
-    
-    public StupidBot(String name){
+public class MyBot extends Player{
+
+    public MyBot(String name) {
         super(name);
     }
 
-    /**
-     *
-     * @return
-     */
     @Override
     public Element play() {
-        return Driver.moves.get("Rock");
+        return Driver.moves.get("Paper");
     }
 
     @Override
     public void setLast(Element e) {
         
     }
-
+    
 }
