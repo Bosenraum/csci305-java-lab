@@ -9,18 +9,19 @@ package csci305.javalab;
  *
  * @author austi_000
  */
-public abstract class Player {
+public class StupidBot extends Player {
     
-    private final String name;
-    
-    public Player(String name){
-        this.name = name;
+    public StupidBot(String name){
+        super(name);
     }
-    
-    public String getName(){
-        return this.name;
+
+    /**
+     *
+     * @return
+     */
+    @Override
+    public Element play() {
+        return Driver.moves.get("Rock");
     }
-    
-    public abstract Element play();
-    
+
 }
