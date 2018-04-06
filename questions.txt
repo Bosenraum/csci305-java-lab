@@ -1,0 +1,42 @@
+Austin Rosenbaum
+CSCI-305 Java Lab
+
+1.  My LastPlayBot relies on adding another abstract method to the Player class called 'setLast'. This method takes an Element as the argument, and when implemented by the LastPlayBot sets the Element passed in to an instance variable called 'last'. When the LastPlayBot's 'play' method is called, it simply returns the Element variable 'last', unless there have been no moves yet, in which case it returns a random Element. The 'setLast' method is called from the main game loop after both players have made their choice and simply uses the other player's move as the input. This approach matches what a human could do in real life, since they would be able to see what the opponent had chosen. While only the LastPlayBot uses the 'setLast' method, I left it as an abstract Player method to allow for future expansion, specifically in MyBot, although this was never actually used.
+
+2.  The strategy I used for MyBot actually differs depending on which player the opponent is. Similar to the 'setLast' method, I created an abstract Player method 'setOpponent' that takes a Player object as its only parameter. When called on MyBot, the parameter is saved to an instance variable called 'opp'. When the the 'play' method is called on MyBot, the 'opp' variable is used to determine which playstyle is appropriate. This implementation uses six strategies, one for each of the possible opponents. To help facilitate this, I also created a general 'beat' method that is only for the MyBot class that takes an Element and returns an Element that would win a round against the input.
+
+-- Human strategy
+Since humans are generally unpredictable, I decided to make it play randomly against a human to level the playing field.
+
+-- StupdidBot strategy
+In my implementation, StupidBot always plays 'Rock', so MyBot always plays 'Paper' against it.
+
+-- RandomBot strategy
+For the RandomBot, I noticed it would usually lose or tie to a StupidBot. To make this a little more interesting, I decided to pick a random constant Element when MyBot is initialized and always play that against the RandomBot. This lead to MyBot beating RandomBot a decent amount.
+
+-- IterativeBot strategy
+The IterativeBot was simple to beat since I knew the order ahead of time. MyBot simply keeps track of what move the IterativeBot will be playing and then used the 'beat' method to always win against that move.
+
+--LastPlayBot strategy
+The LastPlayBot was also simple to beat since I knew what its next move would be after the first one. MyBot keeps track of its own last move and then for the next play, beats it. With this strategy MyBot is guaranteed to win at least 4 of the 5 rounds.
+
+--MyBot strategy
+When two MyBots play each other, I decided to mix things up. Instead of just randomly choosing a move each time, they randomly choose one of the five previously mentions strategies. This is still essentially random but it was more interesting than simply rolling the dice. It also can throw off some of the strategies since some are contingent upon previous plays.
+
+Overall my goal with MyBot was to play against the bots the same way any human reasonably could. It always beats the simple predictable ones and does as well or better than the others.
+
+3.
+
+4.  As mentions in question 2, many of the MyBot strategies were developed as a result of patterns I saw in how the players played. I noticed that as a human, I struggled against a RandomBot the most while the others I could easily beat by knowing their strategy. So MyBot simply plays randomly against a human. Another trend I noticed was that the StupidBot would often beat the RandomBot, so I adopted this as well for MyBot. I can also use this strategy as a human to beat the RandomBot regularly. The StupidBot, LastPlayBot, and IterativeBot were all trivially easy to beat as a human, and MyBot also beats all of these consistently.
+
+5.
+
+6.  As much as some people hate the coding overhead associated with Java, I really enjoy it for learning how to program and trying new things. It is more structured than many languages which forces the programmer to be more direct in their style and intentional with their code. The strong typing helps avoid confusion in large object-oriented programs since you can quickly tell what types variables are as well as what types of inputs functions require.
+
+7.  As I alluded to above, I dislike the Java coding overhead or 'boilerplate'. For small programs especially it can take longer to write out all of the necessary qualifiers than it does to program the logic. It can be great for learning concepts or for organizing large codebases, but for small to medium sized projects it can be much more than necessary.
+
+8.  I enjoyed this lab because it forced me to really separate my code to do things very specifically. It happens all too often that code becomes spaghetti because it wasn't portioned out originally, so it was a good exercise in code management. One issue I had early on was the gradle stuff. I realize this was my fault and I just needed to learn it but it was a big pain at the beginning.
+
+9.  I spent roughly 5 hours on this lab.
+
+10. My Java experience started at MSU almost 4 years ago in CSCI-111 and I've taken the three main courses at MSU that were centered around Java. I've also done a few half-baked side projects in Java that never really went anywhere.

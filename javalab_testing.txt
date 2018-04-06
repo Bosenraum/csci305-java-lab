@@ -1,0 +1,31 @@
+        // Player Bots
+//        StupidBot stupid = new StupidBot("StupidBot");
+//        RandomBot random = new RandomBot("RandomBot");
+//        IterativeBot iter = new IterativeBot("IterativeBot");
+//        LastPlayBot lpb = new LastPlayBot("LastPlayBot");
+//        Human human = new Human("Human");    
+
+		// Players cannot be static because multiple last play bots could be needed
+//        players.put("StupidBot", stupid);
+//        players.put("RandomBot", random);
+//        players.put("IterativeBot", iter);
+//        players.put("LastPlayBot", lpb);
+//        players.put("Human", human);
+
+
+//        for(int i = 0; i < 10; i++){
+//            lastPlayed = players.get("IterativeBot").play();
+//            System.out.println(players.get("LastPlayBot").play().compareTo(lastPlayed));
+//            lpb.setLast(lastPlayed);
+//        }
+        
+//        System.out.println(moves.get("Rock").compareTo(stupid.play()));
+//        System.out.println(stupid.play().compareTo(random.play()));
+//        System.out.println(moves.get("Rock").compareTo(iter.play()));
+//        System.out.println(moves.get("Rock").compareTo(iter.play()));
+//        System.out.println(moves.get("Rock").compareTo(iter.play()));
+//        System.out.println(moves.get("Rock").compareTo(iter.play()));
+//        System.out.println(moves.get("Rock").compareTo(iter.play()));
+//        System.out.println(moves.get("Rock").compareTo(iter.play()));
+//        System.out.println(paper.compareTo(rock));
+//        System.out.println(rock.compareTo(rock));
