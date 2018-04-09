@@ -1,16 +1,12 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package main.java.csci305.javalab;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
 /**
+ * Human player, allows an element to be played via standard input
  *
- * @author austi_000
+ * @author Austin Rosenbaum
  */
 public class Human extends Player{
 
@@ -41,8 +37,6 @@ public class Human extends Player{
             System.out.println("Invalid move. Please try again.");
         }
 
-        //in.close();
-
         switch(input){
             case 1:
                 choice = Driver.moves.get("Rock");
@@ -66,6 +60,7 @@ public class Human extends Player{
         return choice;
     }
 
+    // Helper method to print the Human's menu
     private void printMenu(){
         System.out.println();
         System.out.println("(1) : Rock");

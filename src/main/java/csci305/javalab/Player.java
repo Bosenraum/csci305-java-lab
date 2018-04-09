@@ -1,16 +1,13 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package main.java.csci305.javalab;
 
 /**
+ * Player superclass, extended by specific bots and human player
  *
- * @author austi_000
+ * @author Austin Rosenbaum
  */
 public abstract class Player {
 
+    // create an array of the moves so each player can easily reference them
     protected final Element[] moves = {Driver.moves.get("Rock"),
                                      Driver.moves.get("Paper"),
                                      Driver.moves.get("Scissors"),
@@ -29,8 +26,10 @@ public abstract class Player {
 
     public abstract Element play();
 
+    // Used to store the opponent's last move
     public abstract void setLast(Element e);
 
+    // Allows the player to know who their opponent is
     public abstract void setOpponent(Player p);
 
 }

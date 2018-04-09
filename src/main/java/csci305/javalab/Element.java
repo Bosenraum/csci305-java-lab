@@ -1,25 +1,21 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package main.java.csci305.javalab;
 
 /**
+ * Element superclass, extended by each specific move
  *
- * @author austi_000
+ * @author Austin Rosenbaum
  */
 public abstract class Element {
-    
+
     private final String name;
-    
+
     public Element(String name){
         this.name = name;
     }
-    
+
     public String getName(){
         return this.name;
     }
-    
+
     public abstract Outcome compareTo(Element e);
 }

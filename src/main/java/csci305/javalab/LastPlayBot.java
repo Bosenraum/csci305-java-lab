@@ -6,11 +6,13 @@
 package main.java.csci305.javalab;
 
 /**
+ * Always plays the last move of its opponent, with the exception of round 1
  *
  * @author austi_000
  */
 public class LastPlayBot extends Player{
 
+    // Keep track of the opponent's last move
     private Element last = null;
 
     public LastPlayBot(String name) {
@@ -19,6 +21,7 @@ public class LastPlayBot extends Player{
 
     @Override
     public Element play() {
+        // Play randomly for the first round
         if(this.last == null){
             this.last = new RandomBot("RandomBot").play();
         }

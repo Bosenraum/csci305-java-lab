@@ -1,16 +1,12 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package main.java.csci305.javalab;
 
 /**
+ * Rock move
  *
- * @author austi_000
+ * @author Austin Rosenbaum
  */
 public class Rock extends Element {
-    
+
     public Rock(String name){
         super("Rock");
     }
@@ -19,7 +15,7 @@ public class Rock extends Element {
     public Outcome compareTo(Element e){
         String output = "";
         String result = "";
-        
+
         switch(e.getName()){
             case "Rock":
                 output = "Rock equals Rock";
@@ -42,12 +38,12 @@ public class Rock extends Element {
                 result = "Lose";
                 break;
             default:
-                
+
                 break;
-            
+
         }
-        
+
         return new Outcome(output, result);
     }
-    
+
 }

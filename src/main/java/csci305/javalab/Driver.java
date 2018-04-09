@@ -14,14 +14,11 @@ public class Driver {
 
     // Create a constant Map for all of the elements
     static final Map<String, Element> moves = new HashMap();
-    //static final Map<String, Player> players = new HashMap();
-
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
 
         // Elements
         Rock rock = new Rock("Rock");
@@ -39,26 +36,34 @@ public class Driver {
 
         // Create main menu
         mainMenu();
+
+        // Allow the two players to be chosen
         Player p1 = playerSelect(1);
         Player p2 = playerSelect(2);
+
+        // Tell each player who they are up against (for MyBot)
         p1.setOpponent(p2);
         p2.setOpponent(p1);
 
         System.out.println("\n" + p1.getName() + " vs " + p2.getName() + ". Go!");
 
+        // Keep track of wins/losses
         int p1Count = 0;
         int p2Count = 0;
         String outcome = "";
 
+        // Main game loop, play 5 times
         for(int i = 0; i < 5; i++){
 
+            // Get the element that each player chooses
             Element e1 = p1.play();
             Element e2 = p2.play();
 
+            // Show the round results
             System.out.println("\nRound " + (i+1) + ":");
             System.out.println("  Player 1 chose " + e1.getName());
             System.out.println("  Player 2 chose " + e2.getName());
-            //System.out.println(e1.compareTo(e2));
+
             outcome = e1.compareTo(e2).toString();
 
             // Check who won and update counts
@@ -101,6 +106,7 @@ public class Driver {
 
     }
 
+    // Helper method to print the main menu
     private static void mainMenu(){
         System.out.println("Welcome to Rock, Paper, Scissors, Lizard, Spock, implemented by Austin Rosenbaum!\n");
         System.out.println("Please chose two players:");
@@ -113,6 +119,7 @@ public class Driver {
         System.out.println();
     }
 
+    // Helper method to select the player 
     private static Player playerSelect(int n){
         Player choice = null;
         Scanner in = new Scanner(System.in);

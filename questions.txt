@@ -25,11 +25,13 @@ When two MyBots play each other, I decided to mix things up. Instead of just ran
 
 Overall my goal with MyBot was to play against the bots the same way any human reasonably could. It always beats the simple predictable ones and does as well or better than the others.
 
-3.
+3.  Java is a statically typed language. This means all variables have a definite type that cannot be changed during runtime. Java's typing system is also fairly strong, but it does allow for a good deal of coercion making it slightly weaker [1]. Java allows subtype polymorphism, one implication of this is using a supertype as an argument for compiling, but then passing a subtype during runtime. Java implicitly treats the subtype as the necessary supertype argument since a subtype is just a more specific version of the supertype. This means that the formal parameter's type is not bound until runtime, even though the actual parameter's type will be bound at compile time.
+
+[1] wiki.c2.com/?WeakAndStrongTyping
 
 4.  As mentions in question 2, many of the MyBot strategies were developed as a result of patterns I saw in how the players played. I noticed that as a human, I struggled against a RandomBot the most while the others I could easily beat by knowing their strategy. So MyBot simply plays randomly against a human. Another trend I noticed was that the StupidBot would often beat the RandomBot, so I adopted this as well for MyBot. I can also use this strategy as a human to beat the RandomBot regularly. The StupidBot, LastPlayBot, and IterativeBot were all trivially easy to beat as a human, and MyBot also beats all of these consistently.
 
-5.
+5.  It does not seem to be possible to design a player strategy that will be more likely to win in rock-paper-scissors-lizard-Spock (RPSLV). As mentioned in the Wikipedia article for the game, the probability of a tie is 1/n where n is the number of moves in a balance game. This means 1/5 for RPSLV. This also allows us to easily calculate the odds of winning (and losing) to be 2/5. Because these are the odds for any given move in the game, the payoff matrix would be symmetric for all moves. This means that a player will never have any advantage for choosing a given move, meaning there is not dominated strategy for this game.
 
 6.  As much as some people hate the coding overhead associated with Java, I really enjoy it for learning how to program and trying new things. It is more structured than many languages which forces the programmer to be more direct in their style and intentional with their code. The strong typing helps avoid confusion in large object-oriented programs since you can quickly tell what types variables are as well as what types of inputs functions require.
 

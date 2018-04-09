@@ -1,25 +1,21 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package main.java.csci305.javalab;
 
 /**
+ * Spock move
  *
- * @author austi_000
+ * @author Spock move
  */
 public class Spock extends Element{
-    
+
     public Spock(String name){
         super("Spock");
     }
-    
+
     @Override
     public Outcome compareTo(Element e){
         String output = "";
         String result = "";
-        
+
         switch(e.getName()){
             case "Rock":
                 output = "Spock vaporizes Rock";
@@ -42,11 +38,11 @@ public class Spock extends Element{
                 result = "Tie";
                 break;
             default:
-                
+
                 break;
-            
+
         }
-        
+
         return new Outcome(output, result);
     }
 }
